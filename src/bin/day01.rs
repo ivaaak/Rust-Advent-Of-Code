@@ -1,6 +1,6 @@
 fn main() {
     // read input from the input dir/file
-    let input = std::fs::read_to_string("input/day01").unwrap(); 
+    let input = std::fs::read_to_string("input/day01.txt").unwrap(); 
 
     // call the functions for every line
     let sum1: usize = input.lines().map(part1_calibration_value).sum(); 
