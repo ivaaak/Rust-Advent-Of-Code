@@ -8,13 +8,13 @@ fn main() {
 
     let part1: usize = games
         .iter()
-        .filter(|&g| g.isValid(12, 13, 14))
+        .filter(|&g| g.is_valid(12, 13, 14))
         .map(|g| g.id)
         .sum();
 
     let part2: usize = games
         .iter()
-        .map(Game::multiplyCubes) // call multiplyCubes for every game
+        .map(Game::multiply_cubes) // call multiplyCubes for every game
         .sum();
 
     println!("Part 1: {part1}");
@@ -29,13 +29,13 @@ struct Game {
 }
 
 impl Game {
-    pub fn isValid(&self, reds: usize, greens: usize, blues: usize) -> bool {
+    pub fn is_valid(&self, reds: usize, greens: usize, blues: usize) -> bool {
         self.max_red_cubes <= reds &&
         self.max_green_cubes <= greens &&
         self.max_blue_cubes <= blues
     }
 
-    pub fn multiplyCubes(&self) -> usize {
+    pub fn multiply_cubes(&self) -> usize {
         self.max_red_cubes * self.max_green_cubes * self.max_blue_cubes
     }
 }
